@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827"><title>English Coach Cloud</title>
+<link rel="stylesheet" href="{% static 'coach/style.css' %}">
+</head><body><main>
+<header><div class="logo">EC</div><div><h1>English Coach</h1><p class="muted">Your private daily speaking coach</p></div><span class="pill">Cloud MVP</span></header>
+<section class="card"><div class="status"><span id="liveDot" class="dot"></span><span id="status">Ready when you are</span></div>
+<p class="muted">Start a speaking session, review your transcript, then check your grammar. Audio is not uploaded or stored by this app; browser speech recognition may use a browser-provider service.</p>
+<div class="buttons"><button id="start">● Start speaking</button><button id="stop" class="danger" disabled>■ Stop</button><button id="check" class="secondary">Check grammar</button></div><p id="support" class="small muted"></p></section>
+<section class="card"><label for="transcript">Your transcript (editable)</label><textarea id="transcript" placeholder="Speak or type a sentence here..."></textarea>
+<div class="buttons"><button id="save" class="secondary">Save to cloud</button><button id="clear" class="secondary">Clear</button></div></section>
+<section id="result" class="card hidden"><h2>Grammar feedback</h2><div id="resultBody"></div></section>
+<section class="card"><h2>Daily progress</h2><div class="metrics"><div><strong id="total">0</strong><span>saved transcripts</span></div><div><strong id="todayCount">0</strong><span>today</span></div><div><strong id="todayErrors">0</strong><span>suggestions today</span></div></div><p id="dailyTip" class="muted">Save a transcript to start building your learning history.</p><div class="buttons"><button id="refresh" class="secondary">Refresh history</button><button id="deleteAll" class="secondary">Delete my history</button></div></section>
+<section class="card"><h2>Recent transcripts</h2><div id="history"><p class="muted">No saved transcripts yet.</p></div></section>
+<footer>Privacy: transcript text and corrections are stored in the cloud, associated with a browser-specific key. This is a public, no-login prototype, not strong account security. Anyone who obtains your browser key could access that browser's history. Do not store sensitive conversations. For production, add authentication and a proper rate limiter.</footer>
+</main><script src="{% static 'coach/app.js' %}" defer></script></body></html>
